@@ -90,6 +90,10 @@ pub struct ColumnFamilyDescriptor {
     options: Options,
 }
 
+impl ColumnFamilyDescriptor {
+    pub fn name(&self) -> &str { &self.name }
+}
+
 /// A simple wrapper round a string, used for errors reported from
 /// ffi calls.
 #[derive(Debug, Clone, PartialEq)]
