@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-
 //! Rust wrapper for RocksDB.
 //!
 //! # Examples
@@ -210,3 +209,6 @@ pub struct WriteOptions {
 pub struct ColumnFamily {
     inner: *mut ffi::rocksdb_column_family_handle_t,
 }
+
+unsafe impl Send for ColumnFamily {}
+unsafe impl Sync for ColumnFamily {}
